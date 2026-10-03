@@ -51,6 +51,12 @@ h1 {
     margin: 10px 0;
 }
 
+@media (max-width: 600px) {
+    h1 {
+        font-size: 32px;
+    }
+}
+
 .profile p {
     color: #666;
     font-size: 15px;
