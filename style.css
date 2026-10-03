@@ -1,0 +1,69 @@
+body {
+    background-color: #fff5f5;
+    color:#333;
+    text-align: center;
+    padding: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    background-color: white;
+    color: #333;
+    text-decoration: none;
+    padding: 16px;
+    margin: 12px auto;
+    max-width: 400px;
+    border-radius: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.social-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+.logo {
+    width: 400px;
+    max-width: 100%;
+}
+
+.profile {
+    background: rgba(255, 255, 255, 0.85);
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 45px 35px;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(80, 40, 50, 0.10);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.profile p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 8px 0;
+}
+
+.icon {
+    width: 22px;
+    height: 22px;
+}
+
+
+.social-button i {
+    font-size: 21px;
+}
