@@ -73,3 +73,25 @@ h1 {
 .social-button i {
     font-size: 21px;
 }
+
+
+
+.credit {
+    margin-top: 35px;
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: #888;
+}
+
+.credit a {
+    color: #b76e79;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.credit a:hover {
+    color: #8f4f5a;
+}
