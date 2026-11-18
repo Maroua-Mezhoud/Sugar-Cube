@@ -1,76 +1,164 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sugar Cube</title>
+    <title>Sugar Cube | Pâtisserie sur commande à Bordj Bou Arreridj</title>
+    <meta name="description" content="Sugar Cube : layer cakes, salés, sucré et gâteaux sur commande à Bordj Bou Arreridj. Commande 3 jours à l'avance. | حلويات حسب الطلب في برج بوعريريج.">
+    <meta name="theme-color" content="#ffe3e9">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Aperçu lors du partage du lien -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sugar Cube">
+    <meta property="og:description" content="Layer cakes, salés, sucré et gâteaux sur commande à Bordj Bou Arreridj 🎂">
+    <meta property="og:url" content="https://sugar-cube.netlify.app/">
+    <meta property="og:image" content="https://sugar-cube.netlify.app/Sugar-cube-share.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/png" href="Sugar-cube-icon.png">
+    <link rel="apple-touch-icon" href="Sugar-cube-icon.png">
+
+    <!-- Langue mémorisée + animations (évite le clignotement au chargement) -->
+    <script>
+        (function () {
+            var d = document.documentElement;
+            try {
+                var l = localStorage.getItem('sc-lang');
+                if (l === 'fr' || l === 'ar' || l === 'en') { d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr'; }
+            } catch (e) {}
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('js');
+        })();
+    </script>
+
+    <link rel="preload" as="image" type="image/webp" href="Sugar-cube-logo-480.webp" imagesrcset="Sugar-cube-logo-480.webp 480w, Sugar-cube-logo-900.webp 900w" imagesizes="(max-width: 440px) 90vw, 400px">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-
-<div class="profile">
-
-<img class="logo" src="Sugar-cube-logo.png" alt="Sugar cube logo">
-
-
-    <h1>Sugar Cube</h1>
-
-    <p>
-        📍 Bordj Bou Arreridj (العناصر) 🇩🇿
-    </p>
-
-    <p>
-        Layer Cake 🎂 / Salés 🍔 / Sucré 🍮 / Gateau 🍪
-    </p>
-
-    <p>
-        Commande avant 3 jours 🤍
-    </p>
-
-    <p>
-        Versement de la moitié à l'avance 💸 👌
-    </p>
-
-    <p>
-        مرحبا بالجميع 🤍
-    </p>
-
+    <!-- Rochers de sucre qui flottent en arrière-plan -->
+    <div class="sprinkles" aria-hidden="true">
+        <span style="--x:6%;--d:19s;--delay:-3s;--c:var(--strawberry);--r:20deg;--s:1"></span>
+        <span style="--x:14%;--d:24s;--delay:-14s;--c:var(--teal);--r:-35deg;--s:1.2"></span>
+        <span style="--x:22%;--d:17s;--delay:-9s;--c:var(--butter);--r:60deg;--s:0.9"></span>
+        <span style="--x:31%;--d:26s;--delay:-20s;--c:var(--strawberry);--r:-10deg;--s:1.1"></span>
+        <span style="--x:40%;--d:21s;--delay:-5s;--c:var(--teal);--r:45deg;--s:1"></span>
+        <span style="--x:48%;--d:28s;--delay:-17s;--c:var(--butter);--r:-50deg;--s:1.3"></span>
+        <span style="--x:56%;--d:18s;--delay:-11s;--c:var(--strawberry);--r:75deg;--s:0.9"></span>
+        <span style="--x:64%;--d:23s;--delay:-2s;--c:var(--teal);--r:-20deg;--s:1.1"></span>
+        <span style="--x:72%;--d:27s;--delay:-22s;--c:var(--butter);--r:30deg;--s:1"></span>
+        <span style="--x:80%;--d:20s;--delay:-8s;--c:var(--strawberry);--r:-65deg;--s:1.2"></span>
+        <span style="--x:88%;--d:25s;--delay:-15s;--c:var(--teal);--r:15deg;--s:0.9"></span>
+        <span style="--x:94%;--d:22s;--delay:-6s;--c:var(--butter);--r:-40deg;--s:1.1"></span>
+        <span style="--x:10%;--d:29s;--delay:-25s;--c:var(--teal);--r:50deg;--s:1"></span>
+        <span style="--x:52%;--d:30s;--delay:-27s;--c:var(--strawberry);--r:-30deg;--s:0.8"></span>
+        <span style="--x:76%;--d:31s;--delay:-12s;--c:var(--butter);--r:80deg;--s:0.9"></span>
+        <span style="--x:27%;--d:32s;--delay:-30s;--c:var(--butter);--r:-70deg;--s:1"></span>
     </div>
 
-    <h2>Nos réseaux</h2>
+    <main class="page">
 
-    <a class="social-button" href="https://www.instagram.com/sugar._.cube_34/">
-    <i class="fa-brands fa-instagram"></i>
-    Instagram
-    </a>
+        <div class="lang-switch" dir="ltr" role="group" aria-label="Langue / Language / اللغة">
+            <button type="button" data-set-lang="ar" lang="ar">عربي</button>
+            <button type="button" data-set-lang="fr" lang="fr">Français</button>
+            <button type="button" data-set-lang="en" lang="en">English</button>
+        </div>
 
-    <a class="social-button" href="https://www.tiktok.com/@sugar._.cube_34">
-    <i class="fa-brands fa-tiktok"></i>
-    TikTok
-    </a>
+        <header class="hero">
+            <picture>
+                <source type="image/webp" srcset="Sugar-cube-logo-480.webp 480w, Sugar-cube-logo-900.webp 900w" sizes="(max-width: 440px) 90vw, 400px">
+                <img class="logo" src="Sugar-cube-logo-900.webp" alt="Sugar Cube : batteur rose, fouet, layer cake aux fraises et cupcake" width="900" height="900" fetchpriority="high" decoding="async">
+            </picture>
 
-    <a class="social-button" href="https://www.facebook.com/hocintahri1">
-    <i class="fa-brands fa-facebook-f"></i>
-    Facebook
-    </a>
+            <p class="greeting"><span data-l="fr">Bienvenue à tous 🤍</span><span data-l="ar">مرحبا بالجميع 🤍</span><span data-l="en">Welcome, everyone 🤍</span></p>
 
-    <p class="credit">
-        Created by
-        <a href="https://www.instagram.com/riwaq.midad/"
-           target="_blank"
-           rel="noopener noreferrer">@riwaq.midad</a>
-    </p>
+            <!-- غيّر الرابط في href برابط موقعك الدقيق من خرائط Google (زر "مشاركة") -->
+            <a class="place" href="https://www.google.com/maps/search/?api=1&query=Bordj+Bou+Arreridj+Algeria" target="_blank" rel="noopener noreferrer" aria-label="Google Maps">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                <span data-l="fr">Bordj Bou Arreridj <span lang="ar" dir="rtl">(العناصر)</span> 🇩🇿</span><span data-l="ar">برج بوعريريج (العناصر) 🇩🇿</span><span data-l="en">Bordj Bou Arreridj <span lang="ar" dir="rtl">(العناصر)</span> 🇩🇿</span>
+            </a>
+        </header>
 
+        <section class="section" aria-labelledby="creations">
+            <h2 id="creations" class="reveal"><span data-l="fr">Nos créations</span><span data-l="ar">إبداعاتنا</span><span data-l="en">Our creations</span></h2>
+
+            <ul class="treats">
+                <li class="treat treat--pink reveal" style="--i:0">
+                    <span class="treat__emoji" aria-hidden="true">🎂</span>
+                    <span data-l="fr">Layer Cake</span><span data-l="ar">كيك الطبقات</span><span data-l="en">Layer Cake</span>
+                </li>
+                <li class="treat treat--teal reveal" style="--i:1">
+                    <span class="treat__emoji" aria-hidden="true">🍔</span>
+                    <span data-l="fr">Salés</span><span data-l="ar">المالحات</span><span data-l="en">Savory</span>
+                </li>
+                <li class="treat treat--butter reveal" style="--i:2">
+                    <span class="treat__emoji" aria-hidden="true">🍮</span>
+                    <span data-l="fr">Sucré</span><span data-l="ar">الحلويات</span><span data-l="en">Desserts</span>
+                </li>
+                <li class="treat treat--peach reveal" style="--i:3">
+                    <span class="treat__emoji" aria-hidden="true">🍪</span>
+                    <span data-l="fr">Gâteaux</span><span data-l="ar">الغاطو</span><span data-l="en">Pastries</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section" aria-labelledby="commander">
+            <h2 id="commander" class="reveal"><span data-l="fr">Pour commander</span><span data-l="ar">للطلب</span><span data-l="en">How to order</span></h2>
+
+            <div class="ticket-wrap reveal">
+                <ul class="ticket">
+                    <li class="ticket__row">
+                        <span class="ticket__icon ticket__icon--pink"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></span>
+                        <span class="ticket__text">
+                            <strong><span data-l="fr">Commande 3 jours avant</span><span data-l="ar">اطلب قبل 3 أيام</span><span data-l="en">Order 3 days ahead</span></strong>
+                            <span data-l="fr">pour une préparation soignée</span><span data-l="ar">لتحضير متقن وبكل عناية</span><span data-l="en">so we can prepare it with care</span>
+                        </span>
+                    </li>
+                    <li class="ticket__row">
+                        <span class="ticket__icon ticket__icon--teal"><i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i></span>
+                        <span class="ticket__text">
+                            <strong><span data-l="fr">La moitié à l'avance</span><span data-l="ar">نصف المبلغ مسبقًا</span><span data-l="en">Half paid in advance</span></strong>
+                            <span data-l="fr">versement pour confirmer la commande</span><span data-l="ar">دفعة لتأكيد الطلب</span><span data-l="en">a deposit to confirm your order</span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="reseaux">
+            <h2 id="reseaux" class="reveal"><span data-l="fr">Retrouvez-nous</span><span data-l="ar">تابعونا</span><span data-l="en">Find us</span></h2>
+
+            <nav class="socials" aria-label="Instagram, TikTok, Facebook">
+                <a class="social social--instagram reveal" style="--i:0" href="https://www.instagram.com/sugar._.cube_34/" target="_blank" rel="noopener noreferrer">
+                    <span class="social__badge"><i class="fa-brands fa-instagram" aria-hidden="true"></i></span>
+                    <span class="social__name">Instagram</span>
+                </a>
+
+                <a class="social social--tiktok reveal" style="--i:1" href="https://www.tiktok.com/@sugar._.cube_34" target="_blank" rel="noopener noreferrer">
+                    <span class="social__badge"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></span>
+                    <span class="social__name">TikTok</span>
+                </a>
+
+                <a class="social social--facebook reveal" style="--i:2" href="https://www.facebook.com/hocintahri1" target="_blank" rel="noopener noreferrer">
+                    <span class="social__badge"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></span>
+                    <span class="social__name">Facebook</span>
+                </a>
+            </nav>
+        </section>
+
+        <footer class="credit reveal">
+            <span data-l="fr">Créé par</span><span data-l="ar">صُمّم بواسطة</span><span data-l="en">Created by</span>
+            <a href="https://www.instagram.com/riwaq.midad/" target="_blank" rel="noopener noreferrer">@riwaq.midad</a>
+        </footer>
+
+    </main>
 
 </body>
 
